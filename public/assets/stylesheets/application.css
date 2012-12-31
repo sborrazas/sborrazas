@@ -1,0 +1,141 @@
+/* Fonts ******************************************************************/
+@import url(/assets/stylesheets/reset.css);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+/* General ******************************************************************/
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: #FFF;
+  font-size: 16px;
+  background: #000 url(../images/background_2.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Headings *****************************************************************/
+h1, h2, h3 {
+  margin-bottom: 1em;
+  clear: both;
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: normal;
+}
+
+/* Paragraphs ***************************************************************/
+p {
+  line-height: 1.5em;
+}
+strong { font-weight: bold; }
+
+::-moz-selection {
+  background: #8A8A8A;
+  color: #FFFFFF;
+}
+::selection {
+  background: #8A8A8A;
+  color: #FFFFFF;
+}
+
+/* Links *******************************************************************/
+a {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active,
+a:focus {
+  position: relative;
+  top: 1px;
+}
+
+/* Helpers *****************************************************************/
+.hide {
+  display: none;
+}
+
+/* Index styles ************************************************************/
+section {
+  padding-top: 5%;
+  width: 28%;
+  margin: 0 36%;
+}
+
+header h1,
+header h2 {
+  display: none;
+}
+
+header {
+  background: url(/assets/images/sborrazas.png) no-repeat center center;
+  height: 274px;
+}
+
+section p {
+  text-align: center;
+}
+
+section p.contact-paragraph {
+  margin-top: 1em;
+}
+
+.contact-links {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.contact-links ul {
+  text-align: center;
+}
+
+.contact-links li {
+  display: inline-block;
+  padding: 3px;
+}
+
+.contact-links li a {
+  width: 36px;
+  height: 30px;
+  display: block;
+  background: url(../images/icons.png) transparent no-repeat;
+}
+
+.contact-links li a.github { background-position: 0 6px; }
+.contact-links li a.linkedin { background-position: -47px 6px; }
+.contact-links li a.twitter { background-position: -96px 6px; }
+
+.contact-links li a.github:hover { background-position: 0 -31px; }
+.contact-links li a.linkedin:hover { background-position: -47px -31px; }
+.contact-links li a.twitter:hover { background-position: -96px -31px; }
+
+/* Media Queries ***********************************************************/
+@media screen and (max-width: 1000px) {
+  section {
+    min-width: 50%;
+    margin: 0 25%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    padding-top: 2%;
+    min-width: 310px;
+    margin: auto auto;
+  }
+}

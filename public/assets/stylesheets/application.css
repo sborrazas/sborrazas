@@ -1,43 +1,26 @@
 /* Fonts ******************************************************************/
 @import url(/assets/stylesheets/reset.css);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
 
 /* General ******************************************************************/
-html, body {
+html,
+body {
   height: 100%;
   padding: 0;
   margin: 0;
   border: none;
+  padding-bottom: 1px;
 }
 
 body {
-  font-family: 'PT Sans', sans-serif;
-  color: #FFF;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  color: #999;
   font-size: 16px;
-  background: #000 url(../images/background_2.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #A3D1E0;
+  height: auto;
 }
 
-/* Headings *****************************************************************/
-h1, h2, h3 {
-  margin-bottom: 1em;
-  clear: both;
-}
-
-h1 {
-  font-size: 2.2em;
-  font-weight: normal;
-}
-
-/* Paragraphs ***************************************************************/
-p {
-  line-height: 1.5em;
-}
-strong { font-weight: bold; }
-
+/* Selection ***************************************************************/
 ::-moz-selection {
   background: #8A8A8A;
   color: #FFFFFF;
@@ -49,13 +32,14 @@ strong { font-weight: bold; }
 
 /* Links *******************************************************************/
 a {
-  color: #FFFFFF;
-  font-weight: bold;
-  text-decoration: none;
+  color: #CCC;
+  border-bottom: 1px dotted #CCC;
+  padding-bottom: 5px;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #7F9BB8;
+  border-color: #7F9BB8;
 }
 
 a:active,
@@ -64,44 +48,87 @@ a:focus {
   top: 1px;
 }
 
-/* Helpers *****************************************************************/
-.hide {
-  display: none;
-}
-
-/* Index styles ************************************************************/
-section {
-  padding-top: 5%;
-  width: 28%;
-  margin: 0 36%;
-}
-
-header h1,
-header h2 {
-  display: none;
-}
-
+/* Header ******************************************************************/
 header {
-  background: url(/assets/images/sborrazas.png) no-repeat center center;
-  height: 274px;
+  background-color: #F2F2F2;
+  padding: 2.5em 0 1.5em 0;
 }
 
-section p {
+h1,
+h2 {
+  margin-bottom: 0.5em;
+  clear: both;
   text-align: center;
 }
 
-section p.contact-paragraph {
-  margin-top: 1em;
+h1 {
+  font-size: 2.4em;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #9f9f9f;
+}
+
+/* Main navigation **********************************************************/
+.main-nav {
+  background: #FFF;
+  height: 50px;
+  padding-left: 30px;
+}
+
+.main-nav li {
+  display: inline-block;
+  float: left;
+}
+
+.main-nav a {
+  margin: 6px 5px;
+  padding: 10px 12px;
+  display: block;
+  border: none;
+}
+
+.main-nav a:hover {
+  color: #FFF;
+  background: #7F9BB8;
+  -moz-transition: background-color 1s, color 1s, -moz-transform 1s;
+  -webkit-transition: background-color 1s, color 1s, -webkit-transform 1s;
+  -o-transition: background-color 1s, color 1s, -o-transform 1s;
+  transition: background-color 1s, color 1s, transform 1s;
+}
+
+/* Content ******************************************************************/
+section.main-content {
+  background: #FFF;
+  padding: 48px 0;
+}
+
+section.main-content p {
+  font-size: 1em;
+  line-height: 1.2em;
+  padding-bottom: 25px;
+  text-align: center;
 }
 
 .contact-links {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  background: #CCC;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .contact-links ul {
   text-align: center;
+  padding: 5px 0;
 }
 
 .contact-links li {
@@ -110,10 +137,16 @@ section p.contact-paragraph {
 }
 
 .contact-links li a {
+  border: none;
   width: 36px;
   height: 30px;
   display: block;
   background: url(../images/icons.png) transparent no-repeat;
+  padding: 0;
+}
+
+.contact-links li a span {
+  display: none;
 }
 
 .contact-links li a.github { background-position: 0 6px; }
@@ -124,18 +157,48 @@ section p.contact-paragraph {
 .contact-links li a.linkedin:hover { background-position: -47px -31px; }
 .contact-links li a.twitter:hover { background-position: -96px -31px; }
 
+header,
+section.main-content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Browser looks ***********************************************************/
+.browser-wrapper {
+  margin: 7% 20%;
+  -webkit-box-shadow: 10px 10px 30px 5px rgba(00, 00, 00, 0.2);
+  box-shadow: 10px 10px 30px 5px rgba(00, 00, 00, 0.2);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.browser-navigation {
+  background: #555;
+  height: 32px;
+  padding-left: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.browser-button {
+  display: inline-block;
+  background: #A7A7A7;
+  width: 12px;
+  height: 12px;
+  margin: 10px 2px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
 /* Media Queries ***********************************************************/
 @media screen and (max-width: 1000px) {
-  section {
-    min-width: 50%;
-    margin: 0 25%;
-  }
 }
 
 @media screen and (max-width: 600px) {
-  section {
-    padding-top: 2%;
-    min-width: 310px;
-    margin: auto auto;
-  }
 }

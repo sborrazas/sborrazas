@@ -10,7 +10,10 @@
   <link href="/assets/stylesheets/application.css?182817203" media="screen" rel="stylesheet" type="text/css" />
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png" />
 
+  <%= yield_content(:head) %>
+
   <script src="/assets/javascripts/lib/modernizr.js" type="text/javascript"></script>
+  <script src="/assets/javascripts/lib/require.js" data-main="/assets/javascripts/config.js" type="text/javascript"></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-37320355-1']);
@@ -32,26 +35,20 @@
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="/">About</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li class="<%= 'active' unless in_blog? %>"><a href="/">About</a></li>
+        <li class="<%= 'active' if in_blog? %>"><a href="/blog">Blog</a></li>
       </ul>
     </nav>
-    <header>
-      <h1>Sebastian Borrazas</h1>
-      <h2>Full Stack Web Developer from Montevideo</h2>
+    <header class="main-header">
+      <hgroup>
+        <a href="/">
+          <h1>Sebastian Borrazas</h1>
+          <h2>Full Stack Web Developer from Montevideo</h2>
+        </a>
+      </hgroup>
     </header>
     <section class="main-content">
-      <div class="contact-info">
-        <p>
-          Love the web, working with cool technologies like JavaScript, Ruby and Rails.
-        </p>
-        <p>
-          Currently working at <a href="http://benchprep.com" target="_blank">BenchPrep</a>.
-        </p>
-        <p>
-          If you want to talk, you can find me at <a href="mailto:hi@sborrazas.com" target="_blank">hi@sborrazas.com</a>.
-        </p>
-      </div>
+      <%= yield %>
     </section>
     <nav class="contact-links">
       <ul>
@@ -61,5 +58,7 @@
       </ul>
     </nav>
   </div>
+
+  <%= yield_content(:scripts) %>
 </body>
 </html>

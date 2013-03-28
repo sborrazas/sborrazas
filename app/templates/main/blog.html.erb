@@ -1,0 +1,14 @@
+<% # @param articles [Array<Hash>] %>
+
+<ol class="blog-list">
+  <% articles.each do |article| %>
+    <li>
+      <article>
+        <a href="/blog/<%= article[:slug] %>">
+          <h1><%= article[:title] %></h1>
+          <time><%= article[:date] %></time>
+        </a>
+      </article>
+    </li>
+  <% end %>
+</ol>

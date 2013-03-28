@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
-# Geez, what a pretty Gemfile this is
 gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'rdiscount'
 
 group :development do
   gem 'thin'

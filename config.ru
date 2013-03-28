@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'sinatra/base'
+require "#{File.dirname(__FILE__)}/initialize.rb"
 
-Dir.glob('./app/{helpers,controllers}/*.rb').each {|file| require file }
-
-run ApplicationController
+run MainController

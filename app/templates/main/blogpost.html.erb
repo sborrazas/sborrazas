@@ -1,5 +1,8 @@
 <% # @param article [Hash] %>
 
+<% content_for(:title) { article[:title] } %>
+<% content_for(:description) { article[:description] } %>
+
 <article class="blogpost">
   <header>
     <h1><%= article[:title] %></h1>

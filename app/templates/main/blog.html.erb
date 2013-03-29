@@ -1,5 +1,7 @@
 <% # @param articles [Array<Hash>] %>
 
+<% content_for(:title) { 'My Blog' } %>
+
 <ol class="blog-list">
   <% articles.each do |article| %>
     <li>

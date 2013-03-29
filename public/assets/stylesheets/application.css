@@ -132,8 +132,8 @@ a:focus {
 }
 
 .contact-links ul {
-  text-align: center;
-  padding: 5px 0;
+  text-align: right;
+  padding: 5px 10px;
 }
 
 .contact-links li {

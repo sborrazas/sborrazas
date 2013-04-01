@@ -163,9 +163,9 @@ a:focus {
 .contact-links li a.twitter:hover { background-position: -96px -31px; }
 
 .main-header,
-section.main-content {
-  padding-left: 30px;
-  padding-right: 30px;
+.main-content {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 /* Browser looks ***********************************************************/
@@ -301,5 +301,20 @@ section.main-content {
 
   .blogpost ul {
     padding-left: 2em;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .main-header h1 {
+    font-size: 1.7em;
+  }
+
+  .main-header h2 {
+    padding: 0 10%
+  }
+
+  .main-content {
+    font-size: 0.8em;
   }
 }

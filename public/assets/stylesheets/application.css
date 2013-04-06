@@ -170,7 +170,8 @@ a:focus {
 
 /* Browser looks ***********************************************************/
 .browser-wrapper {
-  margin: 7% 20% 3% 20%;
+  margin: 7% auto 3% auto;
+  max-width: 800px;
   -webkit-box-shadow: 10px 10px 30px 5px rgba(00, 00, 00, 0.2);
   box-shadow: 10px 10px 30px 5px rgba(00, 00, 00, 0.2);
   -webkit-border-radius: 6px;

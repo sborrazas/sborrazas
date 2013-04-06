@@ -22,12 +22,12 @@ body {
 
 /* Selection ***************************************************************/
 ::-moz-selection {
-  background: #8A8A8A;
-  color: #FFFFFF;
+  background: #5D8693;
+  color: #D3F4FF;
 }
 ::selection {
-  background: #8A8A8A;
-  color: #FFFFFF;
+  background: #5D8693;
+  color: #D3F4FF;
 }
 
 /* Links *******************************************************************/

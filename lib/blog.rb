@@ -1,7 +1,9 @@
 require 'time'
+require 'yaml'
 
 module Sborrazas
   module Blog
+
     module_function
 
     def get_article_list

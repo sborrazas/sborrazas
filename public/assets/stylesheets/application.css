@@ -319,3 +319,16 @@ a:focus {
     font-size: 0.8em;
   }
 }
+
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx),
+  only screen and (min-resolution: 144dpi) { /* 2ddpx = 192dpi (it's proportional) */
+
+  .contact-links li a {
+    background-image: url(../images/icons@2x.png);
+    -webkit-background-size: 123px 60px; /* The size of the original image */
+            background-size: 123px 60px;
+  }
+}

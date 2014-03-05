@@ -23,7 +23,7 @@ embed {max-width: 100%;}
 /* force a vertical scrollbar to prevent a jumpy page */
 html {overflow-y: scroll;}
 
-ul {list-style: none;}
+ul, ol {list-style: none;}
 
 blockquote, q {quotes: none;}
 

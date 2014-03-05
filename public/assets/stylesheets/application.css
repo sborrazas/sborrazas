@@ -1,7 +1,6 @@
 /* Fonts ******************************************************************/
 @import url(/assets/stylesheets/reset.css);
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
-@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 /* General ******************************************************************/
 html,
@@ -13,10 +12,10 @@ body {
 }
 
 body {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  color: #999;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #000;
   font-size: 16px;
-  background: #A3D1E0;
+  background: #FFF;
   height: auto;
   padding-bottom: 1px;
 }
@@ -33,14 +32,15 @@ body {
 
 /* Links *******************************************************************/
 a {
-  color: #CCC;
+  color: #000;
   border-bottom: 1px dotted #CCC;
   padding-bottom: 5px;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #7F9BB8;
-  border-color: #7F9BB8;
+  color: #1D9EFF;
+  border-color: #1D9EFF;
 }
 
 a:active,
@@ -50,199 +50,128 @@ a:focus {
 }
 
 /* Header ******************************************************************/
-.main-header {
-  background-color: #F2F2F2;
-  padding: 2.5em 0 1.5em 0;
-}
-
-.main-header h1,
-.main-header h2 {
-  margin-bottom: 0.5em;
-  clear: both;
+#main-header {
+  padding: 130px 26% 100px 26%;
+  margin-bottom: 60px;
   text-align: center;
+  background: #000 url(/assets/images/header-background.jpg) no-repeat 50% 10%;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
 
-.main-header h1 {
-  font-size: 2.4em;
-  color: #555;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-weight: bold;
-}
-
-.main-header h2 {
-  font-weight: normal;
-  font-size: 0.8em;
-  color: #9f9f9f;
-}
-
-/* Main navigation **********************************************************/
-.main-nav {
-  background: #FFF;
-  height: 50px;
-  padding-left: 30px;
-}
-
-.main-nav li {
-  display: inline-block;
-  float: left;
-}
-
-.main-nav li.active a {
-  background: #F5F5F5;
-}
-
-.main-nav a {
-  margin: 6px 5px;
-  padding: 10px 12px;
+#main-header .image-holder {
+  max-height: 150px;
+  max-width: 150px;
+  margin: 0 auto;
+  border-radius: 75px;
+  overflow: hidden;
+  margin-bottom: 25px;
   display: block;
   border: none;
-}
-
-.main-nav a:hover,
-.main-nav li.active a:hover {
-  color: #FFF;
-  background: #7F9BB8;
-  -moz-transition: background-color 1s, color 1s, -moz-transform 1s;
-  -webkit-transition: background-color 1s, color 1s, -webkit-transform 1s;
-  -o-transition: background-color 1s, color 1s, -o-transform 1s;
-  transition: background-color 1s, color 1s, transform 1s;
-}
-
-/* Content ******************************************************************/
-.main-content {
-  background: #FFF;
-  padding: 48px 0;
-}
-
-.contact-info p {
-  font-size: 1em;
-  line-height: 1.2em;
-  padding-bottom: 25px;
-  text-align: center;
-}
-
-.contact-links {
-  background: #CCC;
-  -webkit-border-bottom-left-radius: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -moz-border-radius-bottomright: 6px;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-
-.contact-links ul {
-  text-align: right;
-  padding: 5px 10px;
-}
-
-.contact-links li {
-  display: inline-block;
-  padding: 3px;
-}
-
-.contact-links li a {
-  border: none;
-  width: 36px;
-  height: 30px;
-  display: block;
-  background: url(../images/icons.png) transparent no-repeat;
   padding: 0;
-  opacity: 0.7;
 }
 
-.contact-links li a span {
+#main-header h1,
+#main-header h2 {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+#main-header h1 {
+  font-size: 2.7em;
+}
+
+#main-header h2 {
+  font-weight: normal;
+  font-size: 1.3em;
+  line-height: 1.8em;
+}
+
+#main-header nav {
+  text-align: center;
+}
+
+#main-header nav li {
+  display: inline-block;
+  padding: 3px 8px;
+}
+
+#main-header nav a {
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  opacity: 0.8;
+}
+
+#main-header nav span {
   display: none;
 }
 
-.contact-links li a.github { background-position: 0 6px; }
-.contact-links li a.linkedin { background-position: -47px 6px; }
-.contact-links li a.twitter { background-position: -96px 6px; }
+#main-header nav a.github {
+  background-image: url(/assets/images/icon-social-github-outline.svg);
+}
+#main-header nav a.twitter {
+  background-image: url(/assets/images/icon-social-twitter-outline.svg);
+}
+#main-header nav a.email {
+  background-image: url(/assets/images/icon-social-email-outline.svg);
+}
 
-.contact-links li a:hover {
+#main-header nav a:hover {
   opacity: 1;
 }
 
-.main-header,
-.main-content {
-  padding-left: 5%;
-  padding-right: 5%;
+/* Content ******************************************************************/
+#main-content,
+#main-footer {
+  width: 65%;
+  margin: 0 auto;
 }
 
-/* Browser looks ***********************************************************/
-.browser-wrapper {
-  margin: 7% auto 3% auto;
-  max-width: 800px;
-  -webkit-box-shadow: 10px 10px 30px 5px rgba(00, 00, 00, 0.2);
-  box-shadow: 10px 10px 30px 5px rgba(00, 00, 00, 0.2);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
-
-.browser-navigation {
-  background: #555;
-  height: 32px;
-  padding-left: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-topleft: 6px;
-  -moz-border-radius-topright: 6px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-
-.browser-button {
-  display: inline-block;
-  background: #A7A7A7;
-  width: 12px;
-  height: 12px;
-  margin: 10px 2px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+#main-footer {
+  margin: 50px auto;
+  color: #ADADAD;
 }
 
 /* Blog ********************************************************************/
-.blog-list {
-  list-style: none;
+.blog-list li {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #E6E6E6;
 }
 
-.blog-list li {
-  padding: 12px 0;
-  overflow: auto;
+.blog-list li:last-child {
+  border: none;
 }
 
 .blog-list h1,
 .blogpost h1 {
-  float: left;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .blog-list time,
 .blogpost time {
-  float: right;
+  margin-bottom: 15px;
+  display: block;
+  color: #ADADAD;
 }
 
-.blogpost header {
-  overflow: auto;
-  margin-bottom: 30px;
-}
-
-.blogpost h1 {
-  font-size: 3em;
-}
-
-.blogpost time {
-  margin-top: 20px;
+.blog-list p {
+  margin-bottom: 15px;
 }
 
 .blogpost p,
 .blogpost li {
   line-height: 1.6em;
   padding: 0.6em 0;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .blogpost ul {
@@ -283,56 +212,33 @@ a:focus {
 }
 
 @media screen and (max-width: 600px) {
-  .browser-wrapper {
-    margin: 3%;
+  #main-header {
+    padding: 100px 10% 70px 10%;
   }
 
-  .blog-list time,
-  .blogpost time {
-    margin-top: 3px;
-    display: block;
-  }
-
-  .main-header h1 {
-    font-size: 2em;
-  }
-
-  .blog-list h1,
-  .blogpost h1,
-  .blog-list time,
-  .blogpost time {
-    float: none;
-  }
-
-  .blogpost ul {
-    padding-left: 2em;
+  #main-content,
+  #main-footer {
+    width: 80%;
   }
 }
 
 
 @media screen and (max-width: 400px) {
-  .main-header h1 {
-    font-size: 1.7em;
+  #main-header h1 {
+    font-size: 2em;
   }
 
-  .main-header h2 {
-    padding: 0 10%
+  #main-header h2 {
+    font-size: 1em;
   }
 
-  .main-content {
-    font-size: 0.8em;
+  #main-header nav a {
+    width: 40px;
+    height: 40px;
   }
-}
 
-@media
-  only screen and (-webkit-min-device-pixel-ratio: 1.5),
-  only screen and (min-device-pixel-ratio: 1.5),
-  only screen and (min-resolution: 1.5dppx),
-  only screen and (min-resolution: 144dpi) { /* 2ddpx = 192dpi (it's proportional) */
-
-  .contact-links li a {
-    background-image: url(../images/icons@2x.png);
-    -webkit-background-size: 123px 60px; /* The size of the original image */
-            background-size: 123px 60px;
+  #main-content,
+  #main-footer {
+    width: 90%;
   }
 }

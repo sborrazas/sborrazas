@@ -1,8 +1,15 @@
-<div class="contact-info">
-  <p>
-    Love the web, working with cool technologies like JavaScript, Ruby and Rails.
-  </p>
-  <p>
-    If you want to talk, you can find me at <a href="mailto:hi@sborrazas.com" target="_blank">hi@sborrazas.com</a>.
-  </p>
-</div>
+<% # @param articles [Array<Hash>] %>
+
+<ol class="blog-list">
+  <% articles.each do |article| %>
+    <li>
+      <article>
+        <time><%= pretty_date(article[:date]) %></time>
+        <a href="/blog/<%= article[:slug] %>">
+          <h1><%= article[:title] %></h1>
+        </a>
+        <p><%= article[:description] %></p>
+      </article>
+    </li>
+  <% end %>
+</ol>

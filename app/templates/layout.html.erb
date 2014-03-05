@@ -27,35 +27,46 @@
   </script>
 </head>
 <body>
-  <div class="browser-wrapper">
-    <div class="browser-navigation">
-      <span class="browser-button"></span>
-      <span class="browser-button"></span>
-      <span class="browser-button"></span>
-    </div>
-    <nav class="main-nav">
+  <header id="main-header">
+    <a href="/" class="image-holder">
+      <img src="/assets/images/avatar.jpg" alt="sborrazas" />
+    </a>
+    <hgroup>
+      <h1>Sebastian Borrazas</h1>
+      <h2>
+        I'm a full stack developer from Montevideo. Love the web, working with
+        cool technologies like JavaScript and Ruby.
+      </h2>
+    </hgroup>
+    <nav>
       <ul>
-        <li class="<%= 'active' unless in_blog? %>"><a href="/">About</a></li>
-        <li class="<%= 'active' if in_blog? %>"><a href="/blog">Blog</a></li>
+        <li>
+          <a href="http://github.com/sborrazas" class="github">
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com/sborrazas" class="twitter"
+             target="_blank">
+            <span>Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:hi@sborrazas.com" class="email" target="_blank">
+            <span>My Email</span>
+          </a>
+        </li>
       </ul>
     </nav>
-    <header class="main-header">
-      <hgroup>
-        <h1>Sebastian Borrazas</h1>
-        <h2>Full Stack Web Developer from Montevideo</h2>
-      </hgroup>
-    </header>
-    <section class="main-content">
-      <%= yield %>
-    </section>
-    <nav class="contact-links">
-      <ul>
-        <li><a href="http://github.com/sborrazas" class="github"><span>GitHub</span></a></li>
-        <li><a href="http://twitter.com/sborrazas" class="twitter" target="_blank"><span>Twitter</span></a></li>
-        <li><a href="http://www.linkedin.com/in/sborrazas" class="linkedin" target="_blank"><span>Linkedin</span></a></li>
-      </ul>
-    </nav>
-  </div>
+  </header>
+
+  <section id="main-content">
+    <%= yield %>
+  </section>
+
+  <footer id="main-footer">
+    <p>&copy; 2014. Sebastian Borrazas</p>
+  </footer>
 
   <%= yield_content(:scripts) %>
 </body>

@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
 
   configure :production, :development do
     enable :logging
+    mime_type :svg, "image/svg+xml"
   end
 
   not_found do

@@ -1,5 +1,7 @@
 module ApplicationHelper
-  def in_blog?
-    /^\/blog/ =~ request.path_info
+
+  def pretty_date(date)
+    date.strftime("%B %-d, %Y")
   end
+
 end

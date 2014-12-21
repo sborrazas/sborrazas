@@ -4,7 +4,7 @@
 :description: How to build a simple Game loop from scratch using plain simple JavaScript?
 
 
-Since this is my first codepath post, I wanted to start talking about something we all love: games and the web.
+Since this is my first post, I wanted to start talking about something we all love: games and the web.
 
 Lately I've been digging into HTML5 game development, with all the fun technologies it involved working with.
 Often, I try to make my own simple versions of frameworks, toolkits or game engines, for fun, to learn and for simplicity matters.
@@ -61,5 +61,3 @@ This is its shortened version:
 This implementation won't work for hardcore games, but it does the job with games that need to be updated in really short intervals, and it's really simple to understand.
 There are also many ways to improve efficiency by using the browsers RequestAnimationFrame function.
 Thoughts?
-
-

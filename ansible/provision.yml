@@ -1,0 +1,14 @@
+---
+- hosts: all
+  remote_user: "{{ root_user }}"
+  roles:
+    - { role: common.remote, tags: ["remote"] }
+
+- hosts: all
+  remote_user: "{{ user }}"
+  roles:
+    - role: common
+    - role: ruby
+    - role: webserver
+
+- include: deploy.yml

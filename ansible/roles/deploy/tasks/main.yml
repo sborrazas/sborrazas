@@ -1,0 +1,28 @@
+---
+- set_fact:
+    release_version: "{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}"
+
+- set_fact:
+    release_dir: "{{ base_dir }}/current"
+
+- set_fact:
+    release_dir: "{{ base_dir }}/releases/{{ release_version }}"
+  tags:
+    - remote
+
+- include: remote-fetch.yml
+  tags:
+    - remote
+
+- name: unicorn config file built
+  template:
+    src: "unicorn.rb.j2"
+    dest: "{{ release_dir }}/config/unicorn.rb"
+  tags:
+    - remote
+
+- include: gems.yml
+
+- include: remote-start.yml
+  tags:
+    - remote

@@ -1,8 +1,16 @@
 ---
 - hosts: all
   remote_user: "{{ root_user }}"
+  gather_facts: False
   roles:
-    - { role: common.remote, tags: ["remote"] }
+    - role: ansible-host
+
+- hosts: all
+  remote_user: "{{ root_user }}"
+  roles:
+    - role: common.remote
+      tags:
+        -  remote
 
 - hosts: all
   remote_user: "{{ user }}"
@@ -10,5 +18,6 @@
     - role: common
     - role: ruby
     - role: webserver
+      static: False
 
 - include: deploy.yml

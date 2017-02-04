@@ -1,8 +1,62 @@
 ---
 - hosts: all
   remote_user: "{{ user }}"
-  sudo_user: "{{ user }}"
   vars:
     repo_version: "master"
-  roles:
-    - role: deploy
+  tasks:
+    - set_fact:
+        release_version: "{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}"
+
+    - set_fact:
+        release_dir: "{{ base_dir }}/current"
+
+    - set_fact:
+        release_dir: "{{ base_dir }}/releases/{{ release_version }}"
+
+    - name: project directories exist
+      file:
+        state: directory
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        path: "{{ item.path }}"
+        recurse: True
+      with_items:
+        - { path: "{{ base_dir }}", sudo: True }
+        - { path: "{{ base_dir }}/releases", sudo: False }
+        - { path: "{{ base_dir }}/logs", sudo: False }
+        - { path: "/tmp/unicorn", sudo: False }
+        - { path: "{{ gems_dir }}", sudo: False }
+      become: "{{ item.sudo }}"
+
+    - name: repo present with specified version
+      git:
+        repo: "{{ repo }}"
+        dest: "{{ release_dir }}"
+        version: "{{ repo_version }}"
+        key_file: "{{ private_key_path }}"
+      tags:
+        - remote
+
+    - include_role:
+        name: deploy.unicorn
+
+    - include_role:
+        name: deploy.gems
+      vars:
+        gems:
+          - { name: "sinatra", version: "1.4.8" }
+          - { name: "sinatra-contrib", version: "1.4.7" }
+          - { name: "rdiscount", version: "2.0.7.1" }
+        directory: "{{ gems_dir }}"
+
+    - name: symlink to app directoy exists
+      file:
+        state: link
+        src: "{{ release_dir }}"
+        dest: "{{ app_dir }}"
+
+    - name: unicorn started if not running
+      service:
+        name: "{{ app_name }}-unicorn"
+        state: "restarted"
+      become: True

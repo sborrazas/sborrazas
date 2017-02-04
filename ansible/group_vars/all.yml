@@ -1,7 +1,10 @@
 ---
-  app_name: sborrazas
+  app_name: "sborrazas"
+  base_dir: "/srv/apps/{{ app_name }}"
   app_dir: "{{ base_dir }}/current"
   logs_dir: "{{ base_dir }}/logs"
   gems_dir: "{{ base_dir }}/gems"
+  private_key_path: "/home/{{ user }}/.ssh/{{ app_name }}_rsa"
+  public_key_path: "{{ private_key_path }}.pub"
   unicorn_socket_file: "/tmp/unicorn.{{ app_name }}.sock"
   unicorn_pid_file: "/tmp/unicorn.{{ app_name }}.pid"

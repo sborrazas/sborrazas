@@ -8,4 +8,4 @@ if ! vagrant status | grep "running" > /dev/null; then
   vagrant up
 fi
 
-vagrant ssh -c "cd /vagrant; GEM_PATH=/srv/apps/sborrazas/gems shotgun -p $PORT"
+vagrant ssh -c "cd /srv/apps/sborrazas/current; GEM_PATH=/srv/apps/sborrazas/gems shotgun -p $PORT"

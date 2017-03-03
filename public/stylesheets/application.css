@@ -156,6 +156,11 @@ a:focus {
   margin-bottom: 20px;
 }
 
+.blogpost h2 {
+  font-size: 1.8em;
+  margin: 20px 0 10px 0;
+}
+
 .blog-list time,
 .blogpost time {
   margin-bottom: 15px;

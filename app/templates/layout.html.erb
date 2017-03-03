@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><%= yield_content(:title).empty? ? "Sebastian Borrazas - Developer" : "#{yield_content(:title)} - Sebastian Borrazas" %></title>
+  <title><%= yield_content(:title).empty? ? "Sebastian Borrazas — Developer" : "#{yield_content(:title)} — Sebastian Borrazas" %></title>
   <meta content="<%= yield_content(:description).empty? ? 'Love the web, working with cool technologies like JavaScript, Ruby and Rails.' : yield_content(:description) %>" name="description" />
   <meta content="IE=edge,chrome=1; charset=utf-8" http-equiv="X-UA-Compatible" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8" />
   <meta content="Sebastian Borrazas" name="author" />
-  <meta name="keywords" content="sebastian, borrazas, ruby, developer, web, html, css, javascript" />
+  <meta name="keywords" content="sebastian borrazas,sborrazas,ruby,developer,web,html,css,javascript<%= yield_content(:keywords) %>" />
   <link href="/stylesheets/application.css?182817203" media="screen" rel="stylesheet" type="text/css" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png" />
 

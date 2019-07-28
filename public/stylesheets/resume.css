@@ -1,0 +1,258 @@
+/* Fonts **********************************************************************/
+@import url(reset.css);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/* General ********************************************************************/
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #777;
+  font-size: 14px;
+  background: #e6e4e7;
+  height: auto;
+  padding-bottom: 1px;
+}
+
+/* Selection ******************************************************************/
+::-moz-selection {
+  background: #5D8693;
+  color: #D3F4FF;
+}
+::selection {
+  background: #5D8693;
+  color: #D3F4FF;
+}
+
+/* mainHeader *****************************************************************/
+.mainHeader {
+  background: #000;
+  color: #848388;
+}
+
+.mainHeader-inner {
+  overflow: auto;
+  padding: 40px;
+  position: relative;
+}
+
+.mainHeader-title {
+  color: #FFF;
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.mainHeader-description {
+  line-height: 2em;
+  float: left;
+  margin-right: 5%;
+  width: 56%;
+}
+
+.mainHeader-descriptionHighlight {
+  color: #FFF;
+  font-weight: bold;
+}
+
+.mainHeader-comma {
+  color: #528fdb;
+}
+
+/* contact ********************************************************************/
+.contact {
+  line-height: 1.8em;
+  position: absolute;
+  top: 54px;
+  right: 30px;
+  width: 250px;
+}
+
+.contact dt {
+  color: #FFF;
+  clear: left;
+  font-weight: bold;
+  float: left;
+  width: 100px;
+}
+
+.contact dd {
+  clear: right;
+  float: left;
+}
+
+.contact a,
+.contact a:hover,
+.contact a:active {
+  color: #848388;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.contact a:hover,
+.contact a:active {
+  border-color: #848388;
+}
+
+/* mainContent ****************************************************************/
+.mainContent-inner {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px 40px;
+}
+
+.mainContent-section {
+  flex: 100%;
+}
+
+.mainContent-section--sidebar {
+  flex: 3;
+}
+
+.mainContent-section--withSidebar {
+  flex: 7;
+  margin-left: 40px;
+}
+
+/* header *********************************************************************/
+.header {
+  margin: 15px 0;
+  padding-left: 50px;
+}
+
+.header-title {
+  color: #000;
+  font-size: 22px;
+  font-weight: lighter;
+  position: relative;
+}
+
+.header-titleCounter {
+  position: absolute;
+  left: -50px;
+}
+
+.header-tagline {
+  color: #848388;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* skillset *******************************************************************/
+.skillset {
+  color: #000;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+}
+
+.skillset-item {
+  margin-bottom: 40px;
+}
+
+.skillset-itemBarWrapper {
+  background: #c4c2c5;
+  display: block;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.skillset-itemBar {
+  background: #000;
+  display: block;
+  height: 3px;
+}
+
+.skillset-itemBar--erlang { width: 100%; }
+.skillset-itemBar--ruby { width: 100%; }
+.skillset-itemBar--javascript { width: 85%; }
+.skillset-itemBar--api { width: 80%; }
+.skillset-itemBar--postgres { width: 76%; }
+.skillset-itemBar--devops { width: 74%; }
+.skillset-itemBar--html { width: 82%; }
+.skillset-itemBar--python { width: 50%; }
+.skillset-itemBar--functional { width: 40%; }
+
+/* positions ******************************************************************/
+.positions {}
+
+.positions-item {
+  border: 1px solid #C1C1C1;
+  margin: 17px 0;
+  overflow: auto;
+  padding: 17px 20px;
+}
+
+.positions-item:last-child {
+  margin-bottom: 0;
+}
+
+.positions-itemTitle {
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  margin: 0 0 10px 130px;
+}
+
+.positions-itemDate {
+  color: #848388;
+  font-weight: normal;
+  margin-left: 20px;
+}
+
+.positions-itemImg {
+  float: left;
+  width: 100px;
+}
+
+.positions-itemDescription {
+  line-height: 1.5em;
+  margin: 10px 0 0 130px;
+}
+
+
+/* certifications *************************************************************/
+.certifications {
+  border-left: 1px solid #848388;
+  box-sizing: border-box;
+  line-height: 2.5em;
+  float: left;
+  padding: 0 20px;
+  width: 50%;
+}
+
+.certifications:last-child {
+  padding-right: 0;
+}
+
+.certifications-item {
+}
+
+.certifications-itemTitle {
+  color: #000;
+  font-weight: normal;
+}
+
+.certifications-itemDate {
+  color: #848388;
+  float: right;
+  font-weight: bold;
+}
+
+/* mainFooter *****************************************************************/
+.mainFooter {
+  padding: 0 20px 16px 20px;
+  text-align: right;
+}
+
+/* layout *********************************************************************/
+.mainWrapper {
+  max-width: 1191px;
+  margin: 0 auto;
+}

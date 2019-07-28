@@ -54,9 +54,13 @@
         state: link
         src: "{{ release_dir }}"
         dest: "{{ app_dir }}"
+      tags:
+        - remote
 
     - name: unicorn started if not running
       service:
         name: "{{ app_name }}-unicorn"
         state: "restarted"
       become: True
+      tags:
+        - remote

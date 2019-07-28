@@ -3,7 +3,7 @@
   remote_user: "{{ root_user }}"
   gather_facts: False
   roles:
-    - role: ansible-host
+    - role: common
 
 - hosts: all
   remote_user: "{{ root_user }}"
@@ -20,4 +20,4 @@
     - role: webserver
       static: False
 
-- include: deploy.yml
+- import_playbook: deploy.yml

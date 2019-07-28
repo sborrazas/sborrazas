@@ -1,5 +1,6 @@
 ---
 user: "vagrant"
+root_user: "vagrant"
 base_dir: "/srv/apps/sborrazas"
 app_debug_mode: yes
 app_environment: "development"

@@ -7,6 +7,7 @@ Clone the repo and start the Vagrant VM:
 $ git clone git@github.com:sborrazas/sborrazas.git
 $ cd sborrazas
 $ vagrant up
+$ ./bin/start-server
 ```
 
 ## Production setup

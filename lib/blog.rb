@@ -15,7 +15,7 @@ module Sborrazas
     end
 
     def parse_article(text)
-      meta, content = text.split("\n\n", 2)
+      meta, content = text.force_encoding("UTF-8").split("\n\n", 2)
 
       YAML.load(meta).merge(content: content)
     end

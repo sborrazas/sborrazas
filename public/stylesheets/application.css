@@ -192,6 +192,11 @@ a:focus {
   font-size: 0.8em;
 }
 
+.blogpost img {
+  display: block;
+  margin: 0 auto;
+}
+
 .blogpost-end {
   margin-top: 20px;
 }

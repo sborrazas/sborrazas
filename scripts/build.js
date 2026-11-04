@@ -5,12 +5,16 @@ import { marked } from 'marked';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const output = path.join(root, 'dist');
+const basePath = (process.env.BASE_PATH || '').replace(/\/+$/, '');
 const esc = (value = '') => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 
 function parsePost(text, filename) {
-  const split = text.replace(/^\uFEFF/, '').split(/\r?\n\r?\n/, 2);
+  const source = text.replace(/^\uFEFF/, '');
+  const separator = /\r?\n\r?\n/.exec(source);
+  const metadataText = separator ? source.slice(0, separator.index) : source;
+  const content = separator ? source.slice(separator.index + separator[0].length) : '';
   const metadata = {};
-  for (const line of split[0].split(/\r?\n/)) {
+  for (const line of metadataText.split(/\r?\n/)) {
     const match = line.match(/^:([\w-]+):\s*(.*)$/);
     if (!match) throw new Error(`Invalid metadata in ${filename}: ${line}`);
     let value = match[2].trim();
@@ -20,7 +24,7 @@ function parsePost(text, filename) {
   for (const field of ['title', 'date', 'slug', 'description']) {
     if (!metadata[field]) throw new Error(`Missing :${field}: in ${filename}`);
   }
-  return { ...metadata, content: split[1] ?? '', filename };
+  return { ...metadata, content, filename };
 }
 
 function layout(content, { title = '', description = '', keywords = '', scripts = '' } = {}) {
@@ -73,4 +77,23 @@ for (const post of posts) {
 // Older post content links to the asset path used by the Sinatra deployment.
 await cp(path.join(root, 'public'), path.join(output, 'assets'), { recursive: true });
 await writeFile(path.join(output, '404.html'), layout('<h1>Not Found</h1>'));
+
+// Prefix root-relative links and assets for GitHub project pages, where the
+// site is hosted below /<repository>/ instead of at the domain root.
+if (basePath) {
+  async function prefixRootPaths(directory) {
+    for (const entry of await readdir(directory, { withFileTypes: true })) {
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        await prefixRootPaths(file);
+      } else if (/\.(html|css|js|svg)$/i.test(entry.name)) {
+        const source = await readFile(file, 'utf8');
+        const updated = source.replace(/(["'(=])\/(?!\/)/g, `$1${basePath}/`);
+        if (updated !== source) await writeFile(file, updated);
+      }
+    }
+  }
+  await prefixRootPaths(output);
+}
+
 console.log(`Built ${posts.length} posts and static assets in dist/`);

@@ -1,45 +1,15 @@
-# SBorrazas
+# SBorrazas site
 
-## Dev setup
+This repository builds Sebastian Borrazas's website as plain static files for GitHub Pages. Blog posts live in `blogposts/` and use colon-prefixed metadata followed by Markdown content. The resume and site assets live in `public/`.
 
-Clone the repo and start the Vagrant VM:
-```
-$ git clone git@github.com:sborrazas/sborrazas.git
-$ cd sborrazas
-$ vagrant up
-$ ./bin/start-server
-```
+## Build locally
 
-## Production setup
+Requires Node.js 20 or newer.
 
-### Provision the instance
-
-With the hosts file located in the inventory directory, and the variables set up
-in `group_vars/production.yml` with Ansible Vault.
-
-To be able to connect to EC2 hosts, you need to use the keypair that was given
-to you by the keypair Ansible playbook. In order to add it to your SSH session,
-run the following:
-
-```
-$ ssh-add mykey.pem
-$ ssh-add -l # Make sure the session is listed
+```sh
+npm install
+npm run build
+npm run serve
 ```
 
-Then run the provisioning script:
-
-```
-$ make provision
-```
-
-## Deploying
-
-For deploying the app, make sure you have the right configuration set on
-`ansible/group_vars/production.yml` (use `production.yml.example` as an
-example).
-
-Then run:
-
-```
-$ make deploy
-```
+The generated website is written to `dist/`. The local server serves that directory at `http://localhost:4173`. The GitHub Actions workflow builds `dist/` and publishes it to GitHub Pages whenever `main` is updated.

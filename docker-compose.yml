@@ -1,0 +1,13 @@
+services:
+  site:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run build && npm run serve"
+    ports:
+      - "4173:4173"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+
+volumes:
+  node_modules:
